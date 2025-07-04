@@ -20,14 +20,24 @@ module.exports = {
        mac: {
           category: "public.app-category.productivity",
           icon: "build/icon.icns",
+          // target: [
+          //   {
+          //     target: "dmg",
+          //     arch: ["x64", "arm64", "universal"]
+          //   },
+          //   {
+          //     target: "pkg",
+          //     arch: ["x64", "arm64", "universal"]
+          //   }
+          // ]
           target: [
             {
               target: "dmg",
-              arch: ["x64", "arm64", "universal"]
+              arch: ["universal"]
             },
             {
               target: "pkg",
-              arch: ["x64", "arm64", "universal"]
+              arch: ["universal"]
             }
           ]
         },
