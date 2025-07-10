@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "لديك {0} مهام معلقة أمس.",
     "pendingTasksToday": "لديك {0} مهام مجدولة اليوم.",
     "pendingTasksYesterdayAndToday": "لديك {0} مهام معلقة أمس و {1} مهام مجدولة اليوم."
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "Github": "جيت هب",
+    "Google": "جوجل",
+    "Wechat": "ويتشات"
   }
 }

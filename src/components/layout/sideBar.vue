@@ -72,7 +72,18 @@
       </ul>
     </div>
 
-    <!-- <i class="bi-person-circle" :title="$t('donate.supportUs')" @click="openDonateModal"></i> -->
+    <!-- <i class="bi-person-circle" :title="$t('donate.supportUs')" @click="openDonateModal"></i>
+      -->
+
+    <i class="bi-person-circle" :title="$t('user.profile')" @click="showLoginModal = true"></i>
+    <LoginModal 
+      v-model="showLoginModal"
+      :title="$t('login.title')"
+      @github="handleGithubLogin"
+      @wechat="handleWechatLogin"
+      @google="handleGoogleLogin"
+    />
+
     <i class="bi-info-square" data-bs-toggle="modal" data-bs-target="#tipsModal" :title="$t('tips.tips')"></i>
     <i
       class="bi-gear"
@@ -85,22 +96,26 @@
 </template>
 
 <script>
+import authRepository from '../../repositories/authRepository.js';
 import moment from "moment";
 import customToDoListIdsRepository from "../../repositories/customToDoListIdsRepository";
 import toDoListRepository from "../../repositories/toDoListRepository";
 import Datepicker from "vue3-datepicker";
 import languageHelper from "../../helpers/languageHelper.js";
+import LoginModal from '../LoginModal.vue';
 
 export default {
   name: "sideBar",
   emits: ["changeDate"],
   components: {
     Datepicker,
+    LoginModal,
   },
   data() {
     return {
       pickedDate: new Date(),
       datepickerEnabled: false,
+      showLoginModal: false // 添加这行
     };
   },
   mounted() {
@@ -151,6 +166,18 @@ export default {
     print: function () {
       window.print();
     },
+     handleGithubLogin() {
+      authRepository.githubLogin();
+      this.showLoginModal = false;
+    },
+    handleWechatLogin() {
+      authRepository.wechatLogin();
+      this.showLoginModal = false;
+    },
+    handleGoogleLogin() {
+      authRepository.googleLogin();
+      this.showLoginModal = false;
+    }
   },
   watch: {
     pickedDate: function (val) {

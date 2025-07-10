@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "昨天你有 {0} 个未完成任务。",
     "pendingTasksToday": "您今天有 {0} 个计划任务。",
     "pendingTasksYesterdayAndToday": "您昨天有 {0} 个待办任务和今天的计划任务。"
+  },
+  "login": {
+    "title": "登录",
+    "Github": "GitHub",
+    "Google": "谷歌",
+    "Wechat": "微信"
   }
 }

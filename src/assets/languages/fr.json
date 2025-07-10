@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "Vous avez {0} tâches en attente hier.",
     "pendingTasksToday": "Vous avez {0} tâches planifiées aujourd'hui.",
     "pendingTasksYesterdayAndToday": "Vous avez {0} tâches en attente hier et {1} tâches planifiées aujourd'hui."
+  },
+  "login": {
+    "title": "Connexion",
+    "Github": "Github",
+    "Google": "Google",
+    "Wechat": "Wechat"
   }
 }

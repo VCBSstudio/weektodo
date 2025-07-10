@@ -1,4 +1,10 @@
 {
+  "login": {
+    "title": "로그인",
+    "Github": "깃허브",
+    "Google": "구글",
+    "Wechat": "위챗"
+  },
   "settings": {
     "settings": "설정",
     "language": "언어",

@@ -6,98 +6,51 @@
       <side-bar @change-date="setSelectedDate"></side-bar>
 
       <div class="h-100 d-flex flex-column">
-        <div
-          v-show="showCalendar"
-          class="todo-lists-container"
-          :style="resizableStyle"
-          ref="calendarContainer"
-          :class="{
-            'full-screen': !showCustomList,
-            'hidden-lists-container': hideTopListContainer,
-            'full-screen-divider': hideBottomListContainer,
-          }"
-        >
+        <div v-show="showCalendar" class="todo-lists-container" :style="resizableStyle" ref="calendarContainer" :class="{
+          'full-screen': !showCustomList,
+          'hidden-lists-container': hideTopListContainer,
+          'full-screen-divider': hideBottomListContainer,
+        }">
           <i class="bi-chevron-left slider-btn" ref="weekLeft" @click="weekMoveLeft"></i>
           <div class="todo-slider weekdays" ref="weekListContainer">
-            <to-do-list
-              v-for="date in dates_array"
-              :key="date"
-              :id="date"
-              :showCustomList="showCustomList"
-              @todo-list-mounted="todoListMounted"
-            >
+            <to-do-list v-for="date in dates_array" :key="date" :id="date" :showCustomList="showCustomList"
+              @todo-list-mounted="todoListMounted">
             </to-do-list>
           </div>
           <i class="bi-chevron-right slider-btn" ref="weekRight" @click="weekMoveRight"></i>
         </div>
 
-        <div
-          v-show="showCustomList && showCalendar"
-          class="main-horizontal-divider"
-          id="resizer"
-          :class="mainDividerPositionClass"
-          @mousedown="resizerMouseDownHandler"
-          @dblclick="resizerDblClick"
-        >
+        <div v-show="showCustomList && showCalendar" class="main-horizontal-divider" id="resizer"
+          :class="mainDividerPositionClass" @mousedown="resizerMouseDownHandler" @dblclick="resizerDblClick">
           <div class="inner-main-horizontal-divider"></div>
           <div class="divider-icons-container">
-            <i
-              class="bi-chevron-up move-to-center-up divider-icons"
-              @click="setDividerPosition(1)"
-              :title="$t('ui.restorePanel')"
-            ></i>
-            <i
-              class="bi-chevron-up move-to-corner-up divider-icons"
-              @click="setDividerPosition(2)"
-              :title="$t('ui.maximizeListPanel')"
-            ></i>
-            <i
-              class="bi-chevron-down move-to-center-down divider-icons"
-              @click="setDividerPosition(1)"
-              :title="$t('ui.restorePanel')"
-            ></i>
-            <i
-              class="bi-chevron-down move-to-corner-down divider-icons"
-              @click="setDividerPosition(0)"
-              :title="$t('ui.maximizeCalendarPanel')"
-            ></i>
+            <i class="bi-chevron-up move-to-center-up divider-icons" @click="setDividerPosition(1)"
+              :title="$t('ui.restorePanel')"></i>
+            <i class="bi-chevron-up move-to-corner-up divider-icons" @click="setDividerPosition(2)"
+              :title="$t('ui.maximizeListPanel')"></i>
+            <i class="bi-chevron-down move-to-center-down divider-icons" @click="setDividerPosition(1)"
+              :title="$t('ui.restorePanel')"></i>
+            <i class="bi-chevron-down move-to-corner-down divider-icons" @click="setDividerPosition(0)"
+              :title="$t('ui.maximizeCalendarPanel')"></i>
           </div>
         </div>
 
-        <div
-          v-show="showCustomList"
-          class="todo-lists-container"
-          :class="{
-            'full-screen': !showCalendar,
-            'flex-grow-1': showCalendar,
-            'hidden-lists-container': hideBottomListContainer,
-          }"
-        >
-          <i
-            class="bi-chevron-left slider-btn"
-            @click="customMoveLeft"
-            :style="{
-              visibility: cTodoList.length > customColumns ? 'visible' : 'hidden',
-            }"
-          ></i>
+        <div v-show="showCustomList" class="todo-lists-container" :class="{
+          'full-screen': !showCalendar,
+          'flex-grow-1': showCalendar,
+          'hidden-lists-container': hideBottomListContainer,
+        }">
+          <i class="bi-chevron-left slider-btn" @click="customMoveLeft" :style="{
+            visibility: cTodoList.length > customColumns ? 'visible' : 'hidden',
+          }"></i>
           <div class="todo-slider slides" ref="customListContainer">
-            <to-do-list
-              v-for="(cTodoList, index) in cTodoList"
-              :key="cTodoList.listId"
-              :id="cTodoList.listId"
-              :customTodoList="true"
-              :cTodoListIndex="index"
-              :showCustomList="showCustomList"
-              @todo-list-mounted="todoListMounted"
-            ></to-do-list>
+            <to-do-list v-for="(cTodoList, index) in cTodoList" :key="cTodoList.listId" :id="cTodoList.listId"
+              :customTodoList="true" :cTodoListIndex="index" :showCustomList="showCustomList"
+              @todo-list-mounted="todoListMounted"></to-do-list>
           </div>
-          <i
-            class="bi-chevron-right slider-btn"
-            @click="customMoveRight"
-            :style="{
-              visibility: cTodoList.length > customColumns ? 'visible' : 'hidden',
-            }"
-          ></i>
+          <i class="bi-chevron-right slider-btn" @click="customMoveRight" :style="{
+            visibility: cTodoList.length > customColumns ? 'visible' : 'hidden',
+          }"></i>
         </div>
 
         <div v-show="!showCustomList && !showCalendar" style="margin: auto">
@@ -128,19 +81,11 @@
     </div>
 
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1056">
-      <toast-message
-        id="versionChanges"
-        :text="$t('ui.softwareUpdated')"
-        :sub-text="$t('ui.seeChanges')"
-        @subTextClick="seeChangeLog"
-      ></toast-message>
+      <toast-message id="versionChanges" :text="$t('ui.softwareUpdated')" :sub-text="$t('ui.seeChanges')"
+        @subTextClick="seeChangeLog"></toast-message>
 
-      <toast-message
-        id="newVersionAvailable"
-        :text="$t('ui.newVersionAvailable')"
-        :sub-text="$t('ui.download')"
-        @subTextClick="downloadNewVersion"
-      ></toast-message>
+      <toast-message id="newVersionAvailable" :text="$t('ui.newVersionAvailable')" :sub-text="$t('ui.download')"
+        @subTextClick="downloadNewVersion"></toast-message>
 
       <toast-message id="copiedAddress" :text="$t('donate.copiedAddres')"></toast-message>
     </div>
@@ -181,6 +126,7 @@ import ReorderCustomListsModal from "./views/ReorderCustomListsModal.vue";
 import toastMessage from "./components/toastMessage";
 import activeToDo from "./components/activeToDo.vue";
 import tasksHelper from "./helpers/tasksHelper";
+import authRepository from "./repositories/authRepository";
 
 export default {
   name: "App",
@@ -241,7 +187,30 @@ export default {
       }.bind(this)
     );
   },
-  mounted() {
+  async mounted() {
+    const query = new URLSearchParams(window.location.search);
+    const code = query.get('code');
+    console.log("lt -- code : " + code)
+
+    if (code) {
+      try {
+        const axios = require("axios").default;
+          console.log('lt -- 開始請求 : ');
+        const res = await axios.get(`http://localhost:3000/api/auth/github/callback?code=${code}`);
+        console.log('lt -- res : ' + JSON.stringify(res));
+          alert('lt -- 登录成功' + res);
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('user', JSON.stringify(res.data.user));        // 清除 URL 中的 code 参数
+        window.history.replaceState(null, '', '/');
+
+        // 可选：跳转到用户主页或刷新当前页面
+        // location.reload();
+      } catch (e) {
+        alert('lt -- 登录失败');
+        console.error(e);
+      }
+    }
+
     this.$refs.weekListContainer.scrollLeft = this.todoListWidth();
     this.calendarHeight = this.$store.getters.config.calendarHeight;
     window.addEventListener("resize", this.weekResetScroll);
@@ -268,7 +237,30 @@ export default {
 
     this.resetAppOnDayChange();
   },
+  beforeUnmount() {
+    // 移除事件监听，避免内存泄漏
+    window.removeEventListener('popstate', this.handleAuthCallback);
+    window.removeEventListener('hashchange', this.handleAuthCallback);
+  },
   methods: {
+    async handleAuthCallback() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+      if (code) {
+        try {
+          // 调用后端接口处理授权码
+          await authRepository.handleCallback(code);
+          // 清除URL中的code参数，避免刷新页面重复处理
+          window.history.replaceState({}, document.title, window.location.pathname);
+          // 刷新用户数据或显示登录成功消息
+          this.$store.dispatch('fetchUserData');
+          this.$toast.success('登录成功');
+        } catch (error) {
+          console.error('登录失败:', error);
+          this.$toast.error('登录失败，请重试');
+        }
+      }
+    },
     weekMoveLeft: function () {
       this.selected_date = moment(this.selected_date).subtract(1, "d").format("YYYYMMDD");
       this.$refs.weekListContainer.scrollLeft = this.todoListWidth() * 2;
@@ -811,6 +803,7 @@ body {
   }
 
   &.on-center {
+
     .move-to-center-down,
     .move-to-center-up {
       display: none;

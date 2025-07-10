@@ -35,29 +35,30 @@
             </span>
             <span>
               <div class="visit-site mt-2 mb-3" style="font-size: 0.75rem">
-                <a href="https://weektodo.me" target="_blank">{{ $t("about.site") }}</a>
+                <!--  先暂时这样修改， 以后再替换 -->
+                <a href="https://github.com/VCBSstudio/weektodo" target="_blank">{{ $t("about.site") }}</a>
               </div>
             </span>
             <div class="d-flex align-self-center">
               <a href="https://weektodo.me/blog/1" target="_blank" title="Blog"> <i class="bi-rss mx-2"></i></a>
-              <!-- <a href="https://twitter.com/weektodo" target="_blank" title="Twitter"> <i class="bi-twitter mx-2"></i></a> -->
-              <a href="https://github.com/manuelernestog/weektodo" target="_blank" title="Github">
+              <a href="https://github.com/VCBSstudio/weektodo" target="_blank" title="Github">
                 <i class="bi-github mx-2"></i
               ></a>
-              <a href="mailto:contact@weektodo.me"> <i class="bi-envelope mx-2" :title="$t('about.email')"></i></a>
+              <a href="mailto:helinyu3@qq.com"> <i class="bi-envelope mx-2" :title="$t('about.email')"></i></a>
             </div>
           </div>
           <div class="horizontal-divider mt-3 mb-3"></div>
           <div>
             <div style="margin-top: 10px">
               <div class="row">
-                <a href="https://manuelernestog.github.io" target="_blank" class="row" style="text-decoration: none">
+                <!-- 以后这里设置为日记本的内容Ô -->
+                <a href="https://github.com/VCBSstudio/weektodo" target="_blank" class="row" style="text-decoration: none">
                   <div class="col-md-3">
                     <img
                       class="align-self-center"
                       src="Avatar.webp"
-                      alt="Manuel Ernesto Garcia"
-                      title="Manuel Ernesto Garcia"
+                      alt="Helinyu"
+                      title="Helinyu"
                       width="64"
                     />
                   </div>

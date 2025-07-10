@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "You have {0} pending tasks yesterday.",
     "pendingTasksToday": "You have {0} scheduled tasks today.",
     "pendingTasksYesterdayAndToday": "You have {0} pending tasks yesterday and {1} scheduled tasks today."
+  },
+  "login": {
+    "title": "Login",
+    "Github":"Github",
+    "Google":"Google",
+    "Wechat":"Wechat"
   }
 }

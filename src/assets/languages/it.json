@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "Hai {0} attività in sospeso ieri.",
     "pendingTasksToday": "Hai {0} attività pianificate oggi.",
     "pendingTasksYesterdayAndToday": "Hai {0} attività in sospeso ieri e {1} attività pianificate oggi."
+  },
+  "login": {
+    "title": "Accedi",
+    "Github": "Github",
+    "Google": "Google",
+    "Wechat": "Wechat"
   }
 }

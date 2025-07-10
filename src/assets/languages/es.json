@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "Tienes {0} tareas pendientes ayer.",
     "pendingTasksToday": "Tienes {0} tareas programadas hoy.",
     "pendingTasksYesterdayAndToday": "Tienes {0} tareas pendientes ayer y {1} tareas programadas hoy."
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "Github": "Github",
+    "Google": "Google",
+    "Wechat": "Wechat"
   }
 }

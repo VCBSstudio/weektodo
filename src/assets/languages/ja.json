@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "昨日、{0}の保留中のタスクがあります。",
     "pendingTasksToday": "今日、{0}のスケジュールされたタスクがあります。",
     "pendingTasksYesterdayAndToday": "昨日は{0}の保留中のタスクがあり、今日は{1}のスケジュールされたタスクがあります。"
+  },
+  "login": {
+    "title": "ログイン",
+    "Github": "ギットハブ",
+    "Google": "グーグル",
+    "Wechat": "ウィーチャット"
   }
 }

@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "आपके पास कल {0} शेष कार्य थे।",
     "pendingTasksToday": "आपके पास आज {0} निर्धारित कार्य हैं।",
     "pendingTasksYesterdayAndToday": "आपके पास कल {0} शेष कार्य थे और आज {1} निर्धारित कार्य हैं।"
+  },
+  "login": {
+    "title": "लॉगिन",
+    "Github": "गिटहब",
+    "Google": "गूगल",
+    "Wechat": "वीचैट"
   }
 }

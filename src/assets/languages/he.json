@@ -219,5 +219,11 @@
     "pendingTasksYesterday": "יש לך {0} משימות ממתינות מאתמול.",
     "pendingTasksToday": "יש לך {0} משימות מתוזמנות היום.",
     "pendingTasksYesterdayAndToday": "יש לך {0} משימות ממתינות מאתמול ו-{1} משימות מתוזמנות היום."
+  },
+   "login": {
+    "title": "התחברות",
+    "Github": "גיטהאב",
+    "Google": "גוגל",
+    "Wechat": "ווצ'אט"
   }
 }

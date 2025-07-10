@@ -46,8 +46,10 @@ Sentry.init({
   // },
 });
 
-const app = createApp(App);
+// import router from './router'; // 导入路由配置
 
+const app = createApp(App);
 app.use(store);
 app.use(i18n);
-app.mount("#app");
+// app.use(router); // 注册路由
+app.mount('#app');
