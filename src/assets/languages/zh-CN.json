@@ -180,7 +180,9 @@
     "task": "任务",
     "Frecuency": "频率",
     "print": "PDF/打印",
-    "showAll": "显示所有"
+    "showAll": "显示所有",
+    "aiAnalyse": "AI分析总结",
+    "noTasks": "没有数据"
   },
   "todoDetails": {
     "taskTitle": "任务标题",

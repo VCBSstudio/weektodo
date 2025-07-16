@@ -47,6 +47,14 @@
       data-bs-toggle="modal"
       :title="$t('ui.reorderCustomLists')"
     ></i>
+    <!--ai 分析-->
+    <i
+      v-if="showCustomList"
+      class="bi bi-menu-up"
+      data-bs-target="#AiAnalyseModal"
+      data-bs-toggle="modal"
+      :title="$t('ui.aiAnalyse')"
+    ></i>
     <span style="flex-grow: 1"></span>
     <div class="dropend d-flex justify-content-center sidebar-extra-menu">
       <i class="bi-three-dots sidebar-icon align-self-center" type="button" data-bs-toggle="dropdown"></i>

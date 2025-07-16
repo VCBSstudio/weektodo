@@ -74,6 +74,12 @@
       <importing-modal :id="'exportingModal'" :text="$t('settings.exporting')"></importing-modal>
 
       <reorder-custom-lists-modal @reset-custom-list="resetCustomList"></reorder-custom-lists-modal>
+      <!--ai 分析-->
+      <AiAnalyseModal
+        :datesArray="dates_array"
+        :weekTasks="weekTasks"
+        @reset-custom-list="resetCustomList"
+      ></AiAnalyseModal>
     </div>
     <div class="mobile d-flex flex-column justify-content-center align-items-center">
       <i class="bi-exclamation-diamond mb-4" style="font-size: 100px"></i>
@@ -123,6 +129,7 @@ import RecurrentEventsModal from "./views/RecurrentEventsModal.vue";
 import repeatingEventRepository from "./repositories/repeatingEventRepository";
 import toDoListRepository from "./repositories/toDoListRepository";
 import ReorderCustomListsModal from "./views/ReorderCustomListsModal.vue";
+import AiAnalyseModal from "./views/AiAnalyseModal.vue"; // ai分析
 import toastMessage from "./components/toastMessage";
 import activeToDo from "./components/activeToDo.vue";
 import tasksHelper from "./helpers/tasksHelper";
@@ -145,6 +152,7 @@ export default {
     RecurrentEventsModal,
     importingModal,
     ReorderCustomListsModal,
+    AiAnalyseModal,
     clearListModal,
     toastMessage,
     activeToDo,
@@ -617,6 +625,12 @@ export default {
 
       return this.$store.getters.config.mainDividerPosition == 0 ? true : false;
     },
+    weekTasks() {
+      return this.dates_array.map(date => ({
+        date,
+        tasks: this.$store.getters.todoLists[date] || []
+      }));
+    }
   },
 };
 </script>

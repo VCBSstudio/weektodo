@@ -180,7 +180,9 @@
     "copyTasks": "Copy Tasks",
     "task": "Task",
     "Frecuency": "Frecuency",
-    "showAll": "Show All"
+    "showAll": "Show All",
+    "aiAnalyse": "AI Analysis summary",
+    "noTasks": "no Tasks"
   },
   "todoDetails": {
     "taskTitle": "Task title",
