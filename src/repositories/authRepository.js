@@ -7,7 +7,7 @@ export default {
     // window.location.href = `${AUTH_ENDPOINT}/github`;
    const client_id = process.env.VUE_APP_GITHUB_CLIENT_ID;
     const redirect_uri = process.env.VUE_APP_REDIRECT_URI || window.location.origin;
-    const scope = 'read:user user:email';
+    const scope = 'profile email';
     const url = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=${scope}`;
       window.location.href = url;
   },
@@ -17,11 +17,19 @@ export default {
 
   },
 
-  // 发起Google登录
   async googleLogin() {
+    const client_id = process.env.VUE_APP_GOOGLE_CLIENT_ID;
+    const redirect_uri = process.env.VUE_APP_GOOGLE_REDIRECT_URI || window.location.origin;
+    const scope = ['openid', 'profile', 'email'].join(' ');
+    const response_type = 'code';
 
+    const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${client_id}` +
+                `&redirect_uri=${encodeURIComponent(redirect_uri)}` +
+                `&response_type=${response_type}` +
+                `&scope=${encodeURIComponent(scope)}`;
+    console.log("lt -- url : " + url)
+    window.location.href = url;
   },
-
   // 处理登录回调
   async handleCallback(code) {
     console.log("lt -- get code:" + code)
