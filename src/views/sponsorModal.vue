@@ -44,27 +44,27 @@
             }
         },
         methods: {
-            loadSponsors: function () {
-                if (this.sponsorsList.length == 0) {
-                    const axios = require('axios').default;
-                    axios.get('https://support.weektodo.me/data/sponsors.json')
-                        .then(response => (this.renderSponsors(response)))
-                        .catch(error => console.log(error.message))
-                }
-            },
-            renderSponsors: function (response) {
-                var data = response.data;
-                data.sort(function (a, b) {
-                    if (a.contribution < b.contribution) {
-                        return 1;
-                    }
-                    if (a.contribution > b.contribution) {
-                        return -1;
-                    }
-                    return 0;
-                });
-                this.sponsorsList = data;
-            }
+            // loadSponsors: function () {
+            //     if (this.sponsorsList.length == 0) {
+            //         const axios = require('axios').default;
+            //         axios.get('https://support.weektodo.me/data/sponsors.json')
+            //             .then(response => (this.renderSponsors(response)))
+            //             .catch(error => console.log(error.message))
+            //     }
+            // },
+            // renderSponsors: function (response) {
+            //     var data = response.data;
+            //     data.sort(function (a, b) {
+            //         if (a.contribution < b.contribution) {
+            //             return 1;
+            //         }
+            //         if (a.contribution > b.contribution) {
+            //             return -1;
+            //         }
+            //         return 0;
+            //     });
+            //     this.sponsorsList = data;
+            // }
         }
     }
 </script>

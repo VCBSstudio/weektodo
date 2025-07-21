@@ -73,7 +73,7 @@ async function createWindow() {
   });
 
   mainWindow.on("restore", function () {
-    setTimeout(hideSplashScreen, 4500);
+    // setTimeout(hideSplashScreen, 4500);
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -100,7 +100,7 @@ if (!gotTheLock) {
     } else {
       createWindow();
     }
-    setTimeout(hideSplashScreen, 5000);
+    // setTimeout(hideSplashScreen, 5000);
   });
   app.on("window-all-closed", () => {
     if (process.platform !== "darwin") {
@@ -144,11 +144,11 @@ if (!gotTheLock) {
   }
 }
 
-function hideSplashScreen() {
-  mainWindow.webContents.executeJavaScript(
-    "if(document.getElementById('splashScreen')) document.getElementById('splashScreen').classList.add('hiddenSplashScreen');"
-  );
-}
+// function hideSplashScreen() {
+//   mainWindow.webContents.executeJavaScript(
+//     "if(document.getElementById('splashScreen')) document.getElementById('splashScreen').classList.add('hiddenSplashScreen');"
+//   );
+// }
 
 function showCurrentWindow(event) {
   const webContents = event.sender;
@@ -263,7 +263,7 @@ function createTray() {
       click() {
         if (config.get("isMaximized")) mainWindow.maximize();
         showWindow(mainWindow);
-        setTimeout(hideSplashScreen, 5000);
+        // setTimeout(hideSplashScreen, 5000);  // 隐藏闪屏的页面
       },
     },
     {

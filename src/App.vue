@@ -109,7 +109,7 @@ import sideBar from "./components/layout/sideBar";
 import customToDoListIdsRepository from "./repositories/customToDoListIdsRepository";
 import removeCustomList from "./components/comfirmModals/removeCustomList";
 import configModal from "./views/configModal";
-import splashScreen from "./components/splashScreen";
+// import splashScreen from "./components/splashScreen";
 import configRepository from "./repositories/configRepository";
 import aboutModal from "./views/aboutModal";
 import donateModal from "./views/donateModal";
@@ -143,7 +143,7 @@ export default {
     toDoList,
     sideBar,
     removeCustomList,
-    splashScreen,
+    // splashScreen,
     aboutModal,
     welcomeModal,
     tipsModal,
@@ -417,6 +417,10 @@ export default {
             body: this.initialNotificationText(),
             icon: "/favicon.ico",
             silent: true,
+          /**
+           * Handles click event to show the current window via IPC.
+           * Sends 'show-current-window' message to main process.
+           */
           }).onclick = () => {
             this.ipcRenderer.send("show-current-window");
             setTimeout(() => {
