@@ -4,7 +4,7 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 [[redirects]]
-  from = "https://weektodo-app.netlify.app/"
-  to = "https://app.weektodo.me/"
+  from = "http://helinyu.site"
+  to = "http://8.138.178.4/"
   status = 301
   force = true
